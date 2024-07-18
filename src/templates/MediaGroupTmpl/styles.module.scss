@@ -1,0 +1,50 @@
+.media_group_tmpl {
+	// Content.
+	&_content {
+		@apply pt-10 pb-14;
+
+		@screen xl {
+			@apply pt-16 pb-20;
+		}
+	}
+
+	// Section.
+	&_section {
+		@apply flex flex-col gap-6;
+
+		@screen lg {
+			@apply gap-8;
+		}
+	}
+
+	// Pagination.
+	&_pagination {
+		@apply flex justify-center items-center mt-6 pt-6 border-t border-dark-gray-700 border-opacity-30;
+
+		@screen sm {
+			@apply mt-8 pt-8;
+		}
+
+		@screen md {
+			@apply justify-between mt-10 pt-10;
+		}
+	}
+
+	// Total results.
+	&_results {
+		@apply hidden text-sm text-gray-400 font-light leading-none;
+
+		@screen md {
+			@apply block;
+		}
+
+		span {
+			@apply px-1 text-gray-300 font-medium;
+		}
+	}
+
+	// No Result Message.
+	&_message {
+		@apply py-52;
+	}
+}

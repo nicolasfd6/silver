@@ -1,0 +1,33 @@
+.container {
+	@apply mx-auto px-4 max-w-full w-full;
+
+	@screen sm {
+		max-width: 540px;
+	}
+
+	@screen md {
+		max-width: 720px;
+	}
+
+	@screen lg {
+		max-width: 960px;
+	}
+
+	@screen xl {
+		max-width: 1140px;
+	}
+
+	@screen xxl {
+		max-width: 1320px;
+	}
+
+	&_fluid_large {
+		@screen xxl {
+			max-width: 90% !important;
+		}
+	}
+
+	&_fluid {
+		@apply max-w-full;
+	}
+}

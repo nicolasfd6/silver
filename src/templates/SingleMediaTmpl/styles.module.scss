@@ -1,0 +1,12 @@
+.single_media_tmpl {
+	// Root Styles.
+	@apply pb-14;
+
+	@screen md {
+		@apply pb-16;
+	}
+
+	@screen xl {
+		@apply pb-20;
+	}
+}

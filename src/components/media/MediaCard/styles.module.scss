@@ -1,0 +1,166 @@
+.media_card {
+	// Root Styles.
+	@apply flex flex-col gap-3 transition-all duration-500;
+
+	@media (hover: hover) {
+		&:hover,
+		&:focus-within {
+			.media_card_header::after {
+				@apply bg-opacity-70;
+			}
+
+			.media_card_playicon {
+				@apply opacity-100 -translate-x-2/4 -translate-y-2/4 scale-100;
+			}
+
+			.media_card_rating {
+				@apply opacity-100;
+			}
+
+			.media_card_watchlist {
+				@apply opacity-100 pointer-events-auto;
+			}
+
+			img {
+				@apply blur-[2px];
+			}
+		}
+	}
+
+	// Media Card Wrapper.
+	&_wrapper {
+		@apply relative;
+	}
+
+	// Media Card Header.
+	&_header {
+		@apply relative block rounded overflow-hidden;
+
+		&:hover,
+		&:active,
+		&:focus,
+		&:focus-visible {
+			@apply outline-none;
+		}
+
+		&::after {
+			content: '';
+
+			@apply absolute inset-0 w-full h-full bg-dark-gray-900 bg-opacity-0 transition-all duration-500;
+		}
+	}
+
+	// Media Card Poster.
+	&_poster {
+		@apply block rounded overflow-hidden;
+
+		img {
+			@apply transition-all duration-500;
+		}
+	}
+
+	// Media Card Play Button.
+	&_playicon {
+		@apply absolute top-2/4 left-2/4 z-10 transform -translate-x-2/4 -translate-y-2/4 text-gray-200 scale-50 opacity-0 transition-all duration-300 delay-100;
+
+		span[role='img'] {
+			svg {
+				@apply w-8 h-8;
+			}
+		}
+	}
+
+	// Media Card Content.
+	&_content {
+		@apply flex flex-col gap-2;
+	}
+
+	// Media Card Title.
+	&_title {
+		@apply flex;
+
+		a,
+		a:link,
+		a:visited {
+			@apply flex-1 truncate text-sm font-normal text-gray-100 leading-none transition-colors;
+
+			&:hover,
+			&:active,
+			&:focus,
+			&:focus-visible {
+				@apply text-gray-400 outline-none;
+			}
+		}
+	}
+
+	// Media Card Meta.
+	&_meta {
+		@apply flex flex-wrap gap-1 items-center;
+
+		li {
+			@apply flex items-center min-w-max text-[10px] text-gray-300 font-light leading-none;
+
+			&:not(:last-child)::after {
+				content: '';
+
+				@apply block w-[2px] h-[2px] rounded-full bg-gray-300 ml-1;
+			}
+		}
+	}
+
+	// Media Card Rating.
+	&_rating {
+		@apply absolute top-0 left-1.5 z-10 w-5 h-7 bg-primary-500 backface-hidden transition-opacity duration-300 delay-100;
+
+		clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 80%, 0 100%);
+
+		@screen md {
+			@apply left-3 z-10 w-5 h-8;
+		}
+
+		&_inner {
+			@apply h-full flex items-center justify-center pb-px text-[10px] text-gray-200 font-normal;
+		}
+
+		@media (hover: hover) {
+			@apply opacity-0;
+		}
+
+		&.poor {
+			@apply bg-red-600;
+		}
+
+		&.average {
+			@apply bg-yellow-600;
+		}
+
+		&.above_average {
+			@apply bg-green-600;
+		}
+	}
+
+	// Media Card Watchlist.
+	&_watchlist {
+		@apply absolute bottom-0 left-0 z-10 w-full px-1.5 py-2 transition-opacity duration-300 delay-100;
+
+		@media (hover: hover) {
+			@apply opacity-0 pointer-events-none;
+		}
+
+		@screen md {
+			@apply px-3 py-4;
+		}
+
+		button {
+			@apply w-full flex items-center justify-center text-center gap-1.5 px-4 py-2 text-white bg-dark-gray-800 bg-opacity-80 transition duration-300;
+
+			span:last-child {
+				@apply text-xs font-medium truncate;
+			}
+
+			span[role='img'] svg {
+				@apply w-3 h-3;
+			}
+		}
+	}
+}

@@ -1,0 +1,76 @@
+.search_page_tmpl {
+	// Heading.
+	&_heading {
+		@apply text-base lg:text-lg text-gray-300 font-light leading-normal tracking-wider mt-10 lg:mt-12;
+
+		.label {
+			@apply mr-2;
+		}
+
+		.query {
+			@apply italic font-medium text-gray-100;
+
+			&::before {
+				content: '\201C';
+			}
+
+			&::after {
+				content: '\201D';
+			}
+		}
+	}
+
+	// Content.
+	&_content {
+		@apply pt-10 pb-14;
+
+		@screen xl {
+			@apply pt-16 pb-20;
+		}
+	}
+
+	// Section.
+	&_section {
+		@apply flex flex-col gap-6;
+
+		@screen lg {
+			@apply gap-8;
+		}
+	}
+
+	// Pagination.
+	&_pagination {
+		@apply flex justify-center items-center mt-6 pt-6 border-t border-dark-gray-700 border-opacity-30;
+
+		@screen sm {
+			@apply mt-8 pt-8;
+		}
+
+		@screen md {
+			@apply mt-10 pt-10;
+		}
+	}
+
+	// Total results.
+	&_results {
+		@apply hidden text-sm text-gray-400 font-light leading-none;
+
+		@screen md {
+			@apply block;
+		}
+
+		span {
+			@apply px-1 text-gray-300 font-medium;
+		}
+	}
+
+	// No Result Message.
+	&_message {
+		@apply py-20 md:py-28;
+	}
+
+	// Tab Header.
+	&_tabheader {
+		@apply flex items-center justify-between flex-wrap;
+	}
+}

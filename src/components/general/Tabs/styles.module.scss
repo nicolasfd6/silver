@@ -1,0 +1,52 @@
+.tabs {
+	// Root Styles.
+	@apply flex flex-col gap-5;
+
+	@screen lg {
+		@apply gap-7;
+	}
+
+	// Tabs Header.
+	&_header {
+	}
+
+	// Tabs Label Wrapper.
+	&_label_wrapper {
+		@apply bg-dark-gray-900 max-w-max flex items-center justify-center overflow-hidden rounded-full;
+	}
+
+	// Tabs Label.
+	&_label {
+		@apply block bg-transparent px-4 py-2 text-xs text-gray-100 rounded-full leading-tight outline-none border-none truncate transition-colors duration-300;
+
+		&:hover {
+			@apply text-gray-300;
+		}
+
+		&:active,
+		&:focus,
+		&:focus-visible {
+			@apply outline-none text-gray-300;
+		}
+
+		&.active {
+			@apply bg-primary-500 text-gray-100;
+
+			&:hover,
+			&:active,
+			&:focus,
+			&:focus-visible {
+				@apply bg-primary-400;
+			}
+		}
+	}
+
+	// Tabs Body.
+	&_body {
+		@apply outline-none;
+	}
+
+	// Tabs Content.
+	&_content {
+	}
+}

@@ -1,0 +1,33 @@
+.genres_root_tmpl {
+	// Content.
+	&_content {
+		@apply pt-10 pb-14;
+
+		@screen xl {
+			@apply pt-16 pb-20;
+		}
+	}
+
+	// Section.
+	&_section {
+		@apply flex flex-col gap-5;
+
+		@screen lg {
+			@apply gap-7;
+		}
+	}
+
+	// Info.
+	&_info {
+		@apply hidden text-base lg:text-lg text-gray-300 font-light leading-normal tracking-wider;
+
+		@screen sm {
+			@apply block;
+		}
+	}
+
+	// Tab Header.
+	&_tabheader {
+		@apply flex items-center justify-between;
+	}
+}

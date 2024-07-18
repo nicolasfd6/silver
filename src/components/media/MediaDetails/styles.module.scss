@@ -1,0 +1,143 @@
+.media_details {
+	// Root Styles.
+	@apply relative z-10;
+
+	@screen md {
+		@apply -mt-14;
+	}
+
+	@screen lg {
+		@apply -mt-24;
+	}
+
+	// Media Details Body.
+	&_body {
+		@screen md {
+			@apply bg-dark-gray-800 p-6 rounded;
+		}
+	}
+
+	// Media Details Poster.
+	&_poster {
+		@apply hidden;
+
+		@screen md {
+			@apply sticky top-6 flex flex-col space-y-2;
+		}
+
+		&_img {
+			@apply overflow-hidden rounded;
+		}
+	}
+
+	// Media Watchlist.
+	&_watchlist {
+		@apply block mb-3;
+
+		@screen md {
+			@apply hidden;
+		}
+	}
+
+	// Watchlist Button.
+	&_poster,
+	&_watchlist {
+		button {
+			@apply w-full flex items-center justify-center text-center gap-2 px-4 py-3 text-gray-100 bg-dark-gray-900 bg-opacity-50 transition duration-300;
+
+			&:hover {
+				@apply bg-opacity-100;
+			}
+
+			span:last-child {
+				@apply text-xs font-medium truncate;
+			}
+
+			span[role='img'] svg {
+				@apply w-4 h-4;
+			}
+		}
+	}
+
+	// Media Details Title.
+	&_title {
+		@apply my-5 md:mt-0;
+
+		a,
+		a:link,
+		a:visited {
+			@apply text-xl text-gray-100 font-normal leading-normal;
+
+			@screen md {
+				@apply text-2xl;
+			}
+
+			&:hover {
+				@apply text-gray-300;
+			}
+		}
+
+		span:last-child {
+			@apply ml-1 text-gray-300;
+		}
+	}
+
+	// Media Details Info.
+	&_info {
+		@apply flex flex-col gap-8 mt-8;
+	}
+
+	// Media Details List.
+	&_list {
+		@apply flex flex-wrap items-center gap-1;
+
+		li:not(:last-child) {
+			a::after {
+				content: '\002C';
+			}
+		}
+
+		a,
+		a:link,
+		a:visited {
+			@apply inline-block text-base text-gray-100 font-normal leading-none transition-colors;
+
+			&:hover {
+				@apply text-gray-300;
+			}
+		}
+	}
+
+	// Season Loader.
+	.season_loader {
+		@apply w-full h-44 grid grid-cols-2 gap-2;
+
+		@screen sm {
+			@apply grid-cols-3;
+		}
+
+		@screen md {
+			@apply grid-cols-4;
+		}
+
+		&_item {
+			@apply block w-full h-full rounded bg-dark-gray-900 animate-pulse;
+
+			&:nth-child(n + 3) {
+				@apply hidden;
+			}
+
+			@screen sm {
+				&:nth-child(3) {
+					@apply block;
+				}
+			}
+
+			@screen md {
+				&:nth-child(n + 4):nth-last-child(n + 1) {
+					@apply block;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,64 @@
+.media_episodes {
+	// Root Styles.
+	ul {
+		@apply flex flex-col gap-4;
+
+		@screen md {
+			@apply gap-6;
+		}
+	}
+
+	// Media Episode.
+	.media_episode {
+		&_btn {
+			@apply w-full flex items-baseline py-3 text-base text-gray-100 font-normal leading-normal border-b border-dark-gray-700 border-opacity-30;
+
+			&:hover,
+			&:active,
+			&:focus,
+			&:focus-visible {
+				@apply outline-none text-gray-400;
+			}
+
+			.label {
+				@apply text-gray-400 whitespace-nowrap;
+			}
+
+			.name {
+				@apply text-left;
+			}
+
+			span[role='img'] {
+				@apply inline-block ml-auto px-2;
+			}
+		}
+
+		&_overview {
+			@apply text-base font-light text-gray-100 leading-relaxed pt-3;
+		}
+	}
+
+	// Load More
+	.load_more {
+		&_wrapper {
+			@apply mt-6 md:mt-8;
+		}
+
+		&_btn {
+			@apply flex items-center justify-center gap-2 w-full min-h-[40px] text-sm text-center font-normal text-gray-400 border border-dark-gray-700 border-opacity-30 rounded-sm;
+
+			&:hover {
+				@apply text-gray-100;
+			}
+
+			&:focus,
+			&:focus-visible {
+				@apply outline-none border-opacity-80;
+			}
+
+			svg {
+				@apply w-3 h-3;
+			}
+		}
+	}
+}
